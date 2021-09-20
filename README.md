@@ -15,14 +15,14 @@ Snapshots:
 
 Component Design:
   
-1) Board: This is just a class which contains the state of the game for its reepective players.
+1) Board: This component is state machine of the game. It encapsulates a data structure respresentation of the board with all persists of the game data (ship placement, hits made by the opponent etc). This component is passive meaning it doesnt have any action methods.
   
-2) Game Facade : This is the interface of the Battleship game and contains methods for setting up profiles, setting up ship locations, attacking hits and to find out whether a winner has emerged. Game Facde is stateless.
+2) Game Facade : The facade acts as an interface of the game between the UI and the game engine. It hosts the GameAssistant (two instances, one for each player), which is the driver of the game. This facade is intended to be modified based on the technology stack that the game will be run on. For eg. in case the game engine is hosted as a WEB API, the facade will take the shape of the web api controller. Due to this role, the class is stateless and hosts the engine of the game.
   
-3) Game Assistant : This component is responsible for setting up the Board for the players and channelising the commands coming from Game Facade. This component determines the winner.
+3) Game Assistant : This component is intended to be a player proxy in the game. It has access to the board of a specific player and all the actions on the board pass through this component. The GameAssistant also takes up the role to decide if a player has lost the game.
   
-4) Command : This component is a set of classes which executes all the instructions coming from Game Facade and it directly if affects the state of the Board.
+4) Command Actions : All actions on the board have been conceptualized as objects. The game has structurally designed action viz., Placing Ships, Hitting a cell on the board etc. 
   
-Pseudo Code for the Core logic of the game:
+
   
   
