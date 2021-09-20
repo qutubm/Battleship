@@ -1,5 +1,5 @@
 # Battleship
-Game Instructions:
+**Game Instructions:**
 1) As the game starts profiles for 2 players gets created and Board is set with size 10 X 10.
 2) On the board rows are Alhpabets (i.e. A, B, C...) and columns are numbers (i.e. 1, 2, 3 ...).
 3) Co-ordinates are to be input in <Row>-<Column> fashion i.e. "A-1", "D-5", "G-10" etc.
@@ -13,7 +13,7 @@ Snapshots:
 ![Snapshot2](https://user-images.githubusercontent.com/23535596/133957055-2d61267a-2d2e-4f36-9f6c-e16267cdcdbf.PNG)
 ![Snapshot3](https://user-images.githubusercontent.com/23535596/133957057-427c530b-0797-4565-88dd-06c8d2cace01.PNG)
 
-Component Design:
+**Component Design:**
   
 1) Board: This component is state machine of the game. It encapsulates a data structure respresentation of the board with all persists of the game data (ship placement, hits made by the opponent etc). This component is passive meaning it doesnt have any action methods.
   
@@ -24,7 +24,7 @@ Component Design:
 4) Command Actions : All actions on the board have been conceptualized as objects. The game has structurally designed action viz., Placing Ships, Hitting a cell on the board etc. 
   
   
-A Generic Game workflow :  Although the game has a lot of moving components, it has a common template to follow when performing action on the game. The template can be outlined as below:
+**A Generic Game workflow :**  Although the game has a lot of moving components, it has a common template to follow when performing action on the game. The template can be outlined as below:
 
 1) The UI issues a request to the Facade based on the bootstrap requirements or request from the user. It also passed the profile of the player for whom the request is to be executed.
 	
