@@ -25,8 +25,11 @@ Component Design:
   
   
 A Generic Game workflow :  Although the game has a lot of moving components, it has a common template to follow when performing action on the game. The template can be outlined as below:
-	1) The UI issues a request to the Facade based on the bootstrap requirements or request from the user. It also passed the profile of the player for whom the request is to be executed.
-	2) The Facade accepts the request and creates a action object based on the request by user. It chooses a GameAssistant mapped to the profile and passed the action to the GameAssistant
-	3) The GameAssistant injects the board into the action object and asks the action to do its job. 
+
+1) The UI issues a request to the Facade based on the bootstrap requirements or request from the user. It also passed the profile of the player for whom the request is to be executed.
+	
+2) The Facade accepts the request and creates a action object based on the request by user. It chooses a GameAssistant mapped to the profile and passed the action to the GameAssistant
+	
+3) The GameAssistant injects the board into the action object and asks the action to do its job. 
   
   
